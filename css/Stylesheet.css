@@ -1,9 +1,187 @@
-h1{
-    color: rgb(1, 68, 29);
-    width: 100%;
-    text-align: center;
+
+* {
+    box-sizing: border-box;
 }
-body{
-    background-color: rgb(131, 158, 101);
-    color: rgb(240, 255, 254);
+
+body {
+    margin: 0;
+    padding: 16px;
+    background: #f5f5f5;
+    color: #222;
+    font-family: Arial, sans-serif;
+    line-height: 1.5;
+}
+
+header, footer, .item {
+    padding: 16px;
+    margin-bottom: 16px;
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+header h1 {
+    margin-top: 0;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+a {
+    color: #0645ad;
+}
+
+a:focus-visible, input:focus-visible, select:focus-visible, button:focus-visible {
+    outline: 3px solid #b45309;
+    outline-offset: 3px;
+}
+
+.layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+}
+
+.item {
+    margin: 0;
+    min-width: 0;
+}
+
+.item h2, .item h3 {
+    margin-top: 0;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 8px;
+    border: 1px solid #ccc;
+    text-align: left;
+}
+
+form {
+    display: grid;
+    gap: 8px;
+}
+
+input, select, button, .button {
+    min-height: 40px;
+    padding: 8px;
+    font: inherit;
+}
+
+input, select {
+    width: 100%;
+    border: 1px solid #777;
+    border-radius: 4px;
+    background: white;
+    color: #222;
+}
+
+button, .button {
+    display: inline-block;
+    width: fit-content;
+    border: 1px solid #0645ad;
+    border-radius: 4px;
+    background: #0645ad;
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.alert {
+    padding: 12px;
+    border: 1px solid #176b35;
+    border-left: 5px solid #176b35;
+    border-radius: 4px;
+    background: #e6f4ea;
+    color: #174c2d;
+}
+
+
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 10;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+}
+
+.modal:target {
+    display: flex;
+}
+
+.modal-background {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.modal-content {
+    position: relative;
+    padding: 24px;
+    background: white;
+    color: #222;
+    border-radius: 6px;
+}
+
+.modal-content h2 {
+    margin-top: 0;
+}
+
+
+@media (min-width: 600px) {
+    .layout {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (min-width: 900px) {
+    .layout {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background: #121212;
+        color: #f5f5f5;
+    }
+
+    header, footer, .item, .modal-content {
+        background: #222;
+        color: #f5f5f5;
+        border-color: #666;
+    }
+
+    a {
+        color: #9ec5ff;
+    }
+
+    input, select {
+        background: #222;
+        color: #f5f5f5;
+        border-color: #aaa;
+    }
+
+    button, .button {
+        background: #9ec5ff;
+        color: #111;
+        border-color: #9ec5ff;
+    }
+
+    .alert {
+        background: #173522;
+        color: #e1f5e7;
+        border-color: #75cf91;
+    }
 }
